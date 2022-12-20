@@ -1,3 +1,6 @@
+import os
+
+
 class Job:
     def __init__(self, path, enabled):
         self.path = path
@@ -8,7 +11,7 @@ class Job:
 
 
 def load_jobs():
-    with open('~/tools/dfjobs/jobfile.txt') as jobfile:
+    with open(os.getenv("HOME") + '~/tools/dfjobs/jobfile.txt') as jobfile:
         jobs = {}
         for line in jobfile.readlines():
             name, path, enabled = line.split(',')
@@ -17,5 +20,5 @@ def load_jobs():
 
 
 def save_jobs(jobs):
-    with open('~/tools/dfjobs/jobfile.txt') as jobfile:
+    with open(os.getenv("HOME") + '/tools/dfjobs/jobfile.txt') as jobfile:
         jobfile.writelines([name + ', ' + str(job) for name, job in jobs.items()])
