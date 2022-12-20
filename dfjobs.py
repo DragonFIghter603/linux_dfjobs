@@ -2,7 +2,6 @@ import sys
 import argparse
 
 from commands.list_jobs import list_jobs
-from commands.add_job import add_job
 
 parser = argparse.ArgumentParser(prog='DfJobs')
 subparsers = parser.add_subparsers(dest='subcommand')
