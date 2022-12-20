@@ -1,4 +1,4 @@
-import sys
+#!/usr/bin/python3
 import argparse
 
 from commands.list_jobs import list_jobs
