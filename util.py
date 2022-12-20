@@ -11,7 +11,7 @@ class Job:
 
 
 def load_jobs():
-    with open(os.getenv("HOME") + '~/tools/dfjobs/jobfile.txt') as jobfile:
+    with open(os.getenv("HOME") + '/tools/dfjobs/jobfile.txt') as jobfile:
         jobs = {}
         for line in jobfile.readlines():
             name, path, enabled = line.split(',')
