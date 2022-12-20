@@ -17,7 +17,7 @@ def subcommand(name, args=[], parent=subparsers):
         parser = parent.add_parser(name)
         for arg, kwarg in args:
             parser.add_argument(*arg, **kwarg)
-        parser.set_defaults(func=print)
+        parser.set_defaults(func=func)
     return decorator
 
 
@@ -28,6 +28,7 @@ def help_command(args):
 
 @subcommand('add', [argument('name'), argument('path')])
 def add_job(args):
+    print(args)
     add_job(args.name, args.path)
 
 
