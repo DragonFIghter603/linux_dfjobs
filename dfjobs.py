@@ -21,17 +21,22 @@ def subcommand(name, args=[], parent=subparsers):
     return decorator
 
 
-@subcommand("help", [])
+@subcommand('help', [])
 def add_job(args):
     parser.print_help()
 
 
-@subcommand("add", [argument("name", help="add a job with name and path")])
+@subcommand('add', [argument('name', 'path', help='add a job with name and path')])
 def add_job(args):
     add_job(args.name, args.path)
 
 
-if __name__ == "__main__":
+@subcommand('del', [argument('name', 'path', help='add a job with name and path')])
+def del_job(args):
+    del_job(args.name, args.path)
+
+
+if __name__ == '__main__':
     args = parser.parse_args()
     if args.subcommand is None:
         list_jobs()
