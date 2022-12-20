@@ -28,6 +28,7 @@ def add_job(args):
 
 @subcommand('add', [argument('name'), argument('path')])
 def add_job(args):
+    print(args)
     add_job(args.name, args.path)
 
 
