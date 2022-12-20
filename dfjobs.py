@@ -27,13 +27,12 @@ def help_command(args):
 
 
 @subcommand('add', [argument('name'), argument('path')])
-def add_job(args):
-    print(args)
+def add_job_command(args):
     add_job(args.name, args.path)
 
 
 @subcommand('del', [argument('name')])
-def del_job(args):
+def del_job_command(args):
     del_job(args.name, args.path)
 
 
