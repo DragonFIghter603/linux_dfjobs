@@ -26,12 +26,12 @@ def add_job(args):
     parser.print_help()
 
 
-@subcommand('add', [argument('name', 'path', help='add a job with name and path')])
+@subcommand('add', [argument('name'), argument('path')])
 def add_job(args):
     add_job(args.name, args.path)
 
 
-@subcommand('del', [argument('name', 'path', help='add a job with name and path')])
+@subcommand('del', [argument('name')])
 def del_job(args):
     del_job(args.name, args.path)
 
