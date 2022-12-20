@@ -14,16 +14,15 @@ def argument(*name_or_flags, **kwargs):
 
 def subcommand(name, args=[], parent=subparsers):
     def decorator(func):
-        print(func)
         parser = parent.add_parser(name)
         for arg, kwarg in args:
             parser.add_argument(*arg, **kwarg)
-        parser.set_defaults(func=func)
+        parser.set_defaults(func=print)
     return decorator
 
 
 @subcommand('help', [])
-def add_job(args):
+def help_command(args):
     parser.print_help()
 
 
