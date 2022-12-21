@@ -1,1 +1,3 @@
 jobfile.txt
+**/__pycache__/
+jobs/*
