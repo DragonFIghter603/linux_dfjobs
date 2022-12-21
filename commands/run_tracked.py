@@ -36,4 +36,5 @@ def is_running(name):
     if name not in jobs:
         print('job does not exist')
         return False
+    print(os.getenv("HOME") + f'/tools/dfjobs/jobs/{name}')
     os.path.exists(os.getenv("HOME") + f'/tools/dfjobs/jobs/{name}')
