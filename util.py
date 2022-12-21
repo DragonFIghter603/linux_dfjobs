@@ -22,4 +22,4 @@ def load_jobs():
 
 def save_jobs(jobs):
     with open(os.getenv("HOME") + '/tools/dfjobs/jobfile.txt', 'w') as jobfile:
-        jobfile.writelines([name + ';,;,;' + str(job) for name, job in jobs.items()])
+        jobfile.writelines([name + ';,;,;' + str(job) + '\n' for name, job in jobs.items()])
