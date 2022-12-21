@@ -29,9 +29,9 @@ def help_command(args):
     parser.print_help()
 
 
-@subcommand('add', [argument('name'), argument('command')])
+@subcommand('add', [argument('name'), argument('path'), argument('command')])
 def add_job_command(args):
-    add_job(args.name, args.command)
+    add_job(args.name, args.path, args.command)
 
 
 @subcommand('del', [argument('name')])

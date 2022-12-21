@@ -2,7 +2,7 @@ from commands.run_tracked import is_running
 from util import load_jobs, save_jobs, Job
 
 
-def add_job(name, path):
+def add_job(name, path, command):
     jobs = load_jobs()
     if len(name) > 16:
         print('name should be a max length of 16')
@@ -13,7 +13,7 @@ def add_job(name, path):
     if name in jobs:
         print('job with same name already exists')
         return
-    jobs[name] = Job(path, True)
+    jobs[name] = Job(path, command, True)
     save_jobs(jobs)
 
 
