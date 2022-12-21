@@ -26,7 +26,7 @@ def kill_job(name):
     if not is_running(name):
         print('job not running')
         return
-    with open(f'~/tools/dfjobs/jobs/{name}') as pidfile:
+    with open(os.getenv("HOME") + f'/tools/dfjobs/jobs/{name}') as pidfile:
         pid = int(pidfile.read().strip())
         os.kill(pid, 9)
 
@@ -36,4 +36,4 @@ def is_running(name):
     if name not in jobs:
         print('job does not exist')
         return False
-    os.path.exists(f'~/tools/dfjobs/jobs/{name}')
+    os.path.exists(os.getenv("HOME") + f'/tools/dfjobs/jobs/{name}')
