@@ -44,8 +44,8 @@ def run_tracked_command(args):
     run_tracked(args.name)
 
 
-@subcommand('startall')
-def start_all_command(args):
+@subcommand('runall')
+def run_all_command(args):
     jobs = load_jobs()
     for name, job in jobs.items():
         if job.enabled:
