@@ -2,6 +2,7 @@
 import argparse
 from os import listdir
 
+from commands.enable_disable_job import disable, enable
 from commands.list_jobs import list_jobs
 from commands.add_del_job import add_job, del_job
 from commands.run_tracked import run_tracked, kill_job
@@ -42,6 +43,21 @@ def del_job_command(args):
 @subcommand('run', [argument('name')])
 def run_tracked_command(args):
     run_tracked(args.name)
+
+
+@subcommand('kill', [argument('name')])
+def kill_command(args):
+    kill_job(args.name)
+
+
+@subcommand('enable', [argument('name')])
+def enable_command(args):
+    enable(args.name)
+
+
+@subcommand('disable', [argument('name')])
+def disable_command(args):
+    disable(args.name)
 
 
 @subcommand('runall')

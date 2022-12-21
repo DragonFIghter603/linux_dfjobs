@@ -29,6 +29,7 @@ def kill_job(name):
     with open(os.getenv("HOME") + f'/tools/dfjobs/jobs/{name}') as pidfile:
         pid = int(pidfile.read().strip())
         os.kill(pid, 9)
+    os.remove(os.getenv("HOME") + f'/tools/dfjobs/jobs/{name}')
 
 
 def is_running(name):
