@@ -2,12 +2,12 @@ import os
 
 
 class Job:
-    def __init__(self, path, enabled):
-        self.path = path
+    def __init__(self, command, enabled):
+        self.command = command
         self.enabled = enabled
 
     def __str__(self):
-        return f'{self.path}, {self.enabled}'
+        return f'{self.command}, {self.enabled}'
 
 
 def load_jobs():
