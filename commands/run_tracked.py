@@ -13,7 +13,7 @@ def run_tracked(name):
         print('job already running')
         return
     job = jobs[name]
-    pid = subprocess.Popen(f'cd {job.path}; {job.command}', shell=True)
+    pid = subprocess.Popen(f'cd {job.path}; {job.command}', shell=True).pid
     os.system(f'echo {pid} > ~/tools/dfjobs/jobs/{name}')
     subprocess.Popen(f'tail --pid={pid} -f /dev/null; rm ~/tools/dfjobs/jobs/{name}; echo shutdown')
 
