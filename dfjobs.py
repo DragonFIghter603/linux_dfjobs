@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 import argparse
+import os
 from os import listdir
 
 from commands.enable_disable_job import disable, enable
@@ -70,7 +71,7 @@ def run_all_command(args):
 
 @subcommand('killall')
 def kill_all_command(args):
-    for file in listdir('~/tools/dfjobs/jobs'):
+    for file in listdir(os.getenv("HOME") + '/tools/dfjobs/jobs'):
         kill_job(file)
 
 
