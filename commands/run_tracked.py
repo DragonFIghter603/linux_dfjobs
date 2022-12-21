@@ -15,7 +15,7 @@ def run_tracked(name):
     job = jobs[name]
     pid = subprocess.Popen(f'cd {job.path}; {job.command}', shell=True).pid
     os.system(f'echo {pid} > ~/tools/dfjobs/jobs/{name}')
-    subprocess.Popen(f'tail --pid={pid} -f /dev/null; rm ~/tools/dfjobs/jobs/{name}; echo shutdown')
+    subprocess.Popen(f'tail --pid={pid} -f /dev/null;echo shutdown')
 
 
 def kill_job(name):
