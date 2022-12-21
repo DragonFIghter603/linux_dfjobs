@@ -14,7 +14,7 @@ def run_tracked(name):
         return
     job = jobs[name]
     pid = subprocess.Popen(f'cd /D {job.path}; {job.command}', shell=True)
-    with open(f'~/tools/dfjobs/jobs/{name}', 'x') as pidfile:
+    with open(f'~/tools/dfjobs/jobs/{name}', 'xt') as pidfile:
         pidfile.write(str(pid))
     subprocess.Popen(f'tail --pid={pid} -f /dev/null; rm ~/tools/dfjobs/jobs/{name}; echo shutdown')
 
